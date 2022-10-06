@@ -89,6 +89,7 @@
     console.log(isFive(5));
 
 
+
     function isShortWord(string) {
         return string.length < 5
     }
