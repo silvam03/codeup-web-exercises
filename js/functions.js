@@ -1,5 +1,5 @@
 "use strict";
-
+(function() {
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -11,7 +11,6 @@
 function sayHello(name) {
     return "Hello" + name;
 }
-console.log(sayHello(' Craig'));
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -19,9 +18,6 @@ console.log(sayHello(' Craig'));
  *
  * console.log 'helloMessage' to check your work
  */
-function sayHello(name) {
-    return "Hello" + name;
-}
 let helloMessage = sayHello(" Matias");
 console.log(helloMessage);
 /**
@@ -30,8 +26,8 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-let myName = sayHello(" Matias");
-console.log(myName);
+let myName = " Matias";
+console.log(sayHello(myName));
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -56,7 +52,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(number) {
-    return number === 2;
+    return number == 2;
 }
 console.log(isTwo(random));
 
@@ -72,7 +68,7 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(tip, bill) {
-    return tip*bill
+    return tip * bill
 }
 console.log(calculateTip(.20, 200));
 /**
@@ -106,3 +102,11 @@ console.log(tip);
  */
 const applyDiscount = (before, percentage) => before - (before * percentage);
 console.log(applyDiscount(10, .1));
+
+// function applyDiscount(price, discountPercent) {
+//     let discountAmount = price - (price * discountPercent);
+//     let totalPrice = price + discountAmount;
+//     return totalPrice;
+// }
+
+}());
