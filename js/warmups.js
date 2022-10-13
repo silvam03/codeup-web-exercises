@@ -1,6 +1,6 @@
 "use strict";
 (function(){
-
+                            //WARMUP 10/11
     // Write a function that takes in a number and returns the number passed multiplied by the number 5. If we pass anything other than a number into the function, the function should return the number 0.
 
 function justNumbers(number) {
@@ -32,6 +32,17 @@ console.log(justNumbers(20));
     console.log(justNumbers(20));
 
 
-
+                            //WARMUP 10/13
+    // Write a function named "inBetween" that accepts three inputs: min, max, num, and returns a boolean determining whether or not the "num" parameter is in between the min and max numbers.
+function inBetween(min, max, num) {
+    if (min < num && max > num) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(inBetween(1, 10, 5));
+console.log(inBetween(25, 26, 25));
+console.log(inBetween(0, 1, 0.5));
 
 })();
