@@ -50,7 +50,7 @@ console.log(sortArr.sort());
 
 
 //Splitting an array --- .split()
-//Takes string and turns it into am array
+//Takes string and turns it into an array
 let splitArr = "Chris, Mats, John, Jim, Billy"
 // splitArr.split();
 console.log(splitArr.split(","));
