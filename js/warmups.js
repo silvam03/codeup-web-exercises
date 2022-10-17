@@ -45,4 +45,22 @@ console.log(inBetween(1, 10, 5));
 console.log(inBetween(25, 26, 25));
 console.log(inBetween(0, 1, 0.5));
 
+
+//WARMUP 10/17
+//     Create a function named "typePrinter" that accepts an array as an input, and logs the data type of each element to the console.
+//
+        let arr = [true, "Icon", 25, "66", false, 0];
+
+    function typePrinter(x) {
+        for(let i = 0; i < x.length; i++) {
+            console.log(typeof x[i]);
+        }
+        // console.log(typeof arr[0]);
+        // console.log(typeof arr[1]);
+        // console.log(typeof arr[2]);
+        // console.log(typeof arr[3]);
+        // console.log(typeof arr[4]);
+        // console.log(typeof arr[5]);
+    }
+    typePrinter(arr);
 })();
