@@ -110,4 +110,5 @@ function average(array) {
     console.log(average([1, 2, 3, 4, 5]));
     console.log(average(["5.5", "five", 3, 6, 7]));
 
+
 })();
