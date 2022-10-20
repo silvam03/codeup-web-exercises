@@ -63,4 +63,51 @@ console.log(inBetween(0, 1, 0.5));
         // console.log(typeof arr[5]);
     }
     typePrinter(arr);
+
+//WARMUP 10/20
+// Create a function named "average" that takes in an array of numeric values, and returns the average. If any of the elements in the array are non-numeric, the function should return false.
+
+// function average(arr) {
+//     if(!isNaN(parseFloat(arr))) {
+//         for(let i = 0; i > arr.length; i++) {
+//             let sum = 0 + i;
+//             return (sum / arr.length) * arr.length;
+//         }
+//     }
+//     return false
+// }
+// console.log(average([1, 2, 3]))
+
+// function average(array) {
+//     let i = 0;
+//     let sum = 0;
+//     while (i < array.length) {
+//         if(!isNaN(parseFloat(array[i]))) {
+//             sum += parseFloat(array[i]);
+//             i++
+//         } else {
+//             return false
+//         }
+//     }
+//     return sum / array.length;
+// }
+//OR with for loop
+function average(array) {
+    let sum = 0;
+    for(let i = 0; i < array.length; i++) {
+        if(!isNaN(parseFloat(array[i]))) {
+            sum += parseFloat(array[i])
+        } else {
+            return false
+        }
+    }
+    return sum / array.length
+}
+
+    console.log(average(["6", 5, 3, 2, 9]));
+    console.log(average([true, 6, 9, 3, 10]));
+    console.log(average([{name: "Codey the Duck"}, 10, 3, false]));
+    console.log(average([1, 2, 3, 4, 5]));
+    console.log(average(["5.5", "five", 3, 6, 7]));
+
 })();
