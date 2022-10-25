@@ -111,4 +111,30 @@ function average(array) {
     console.log(average(["5.5", "five", 3, 6, 7]));
 
 
+// Warmup 10/25
+// Create a function named "filterNegativity" that accepts an array of numbers, and returns an array with only positive numbers.
+// function filterNegativity(arr) {
+//     if(!isNaN(parseFloat(arr))) {
+//         for(let i = 0; i < arr.length; i++) {
+//             if(arr[i] > 0) {
+//                 return arr[i]
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+
+const filterNegativity = (arr) => {
+    let positiveArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] >= 0) {
+            positiveArr.push([i])
+        }
+    }
+    return positiveArr;
+}
+
+console.log(filterNegativity([5, -6, 2, 0, -5, -13]))
+
 })();
