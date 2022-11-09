@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" id="htmlFile">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Duck Rating Website</h1>
+
+<img src="img/rubber-duck.jpeg">
+<img src="img/rubber-duck.jpeg">
+
+<button type="button" id="dark-mode">dark mode</button>
+<script>
+    // Selected button element by Id
+    let btn = document.getElementById("dark-mode");
+    // Button has "click" event attached
+    btn.addEventListener('click', function() {
+        console.log("event listener fired off");
+        let html = document.getElementById('htmlFile');
+        html.style['background'] = 'grey';
+    });
+    btn.addEventListener('mouseout', function (){
+        let html = document.getElementById('htmlFile');
+        html.style['background'] = 'white';
+        html.style['color'] = 'black';
+    });
+
+</script>
+
+</body>
+</html>
