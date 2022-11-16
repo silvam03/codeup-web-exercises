@@ -1,8 +1,9 @@
 "use strict";
-(function() {
-    $(document).ready(function() {
+(function () {
+    $(document).ready(function () {
         //First Exercise
         // alert("DOM has finished loading!");
+
 
         //Second Exercise(p1-Id Selectors)
         // let divContents = $('#player-1').html();
@@ -23,7 +24,26 @@
         // alert(h1Contents);
 
         //Second Exercise(p3-Multiple Selectors)
-        $('h1, p, li').css('background-color', 'yellow');
+        //$('h1, p, li').css('background-color', 'yellow');
+
+
+        //Third Exercise(Mouse Events)
+        $('h1').click(function () {
+            $('h1').css('background-color', 'red');
+        });
+
+        $('p').dblclick(function () {
+            $('p').css('font-size', '18px');
+        });
+
+        $('li').hover(
+            function () {
+                $(this).css('color', 'red');
+            },
+            function () {
+                $(this).css('color', 'black')
+            }
+        );
     })
 
 })();
