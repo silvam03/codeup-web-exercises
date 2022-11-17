@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<label for="userCode" class="form-label">
+    <input type="text" id="userCode" placeholder="Type Here">
+</label>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    let konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    let userInput = 0;
+
+    $(document).keyup(function (event) {
+        console.log(event.keyCode);
+        let keyPressed = event.keyCode;
+
+        if(konami.indexOf(keyPressed) < 0 || keyPressed !== konami[userInput]) {
+            userInput = 0;
+            console.log(userInput);
+        } else {
+            userInput++;
+            console.log(userInput);
+        } if(userInput === 11) {
+            console.log(userInput);
+            alert("Code entered correct! 30 extra lives rewarded!");
+            $('body').css('background-color', 'red');
+            $('h1').css('color', 'white').css('font-size', '100px').html('KONAMI CODE!');
+        }
+    });
+</script>
+</body>
+</html>
