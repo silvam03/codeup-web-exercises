@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery FAQ</title>
+
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        dt {
+            font-size: 25px;
+            margin-top: 1.5em;
+        }
+    </style>
+</head>
+<body>
+<h1>10 facts about National Parks in the U.S.</h1>
+
+<div>
+    <label for="fakeBtn">Want the answers? Click Here -></label>
+    <input type="submit" id="fakeBtn">
+</div>
+<h1 class="invisible">Just Kidding! (ps. scroll down after hitting submit again)</h1>
+
+<dl>
+    <dt>1. How many National Parks in the U.S.?</dt>
+    <dd class="invisible">423!</dd>
+
+    <dt>2. What is the most visited National Park?</dt>
+    <dd class="invisible">Great Smoky Mountains National Park!</dd>
+
+    <dt>3. What is the largest National Park?</dt>
+    <dd class="invisible">Wrangell-St. Elias National Park and Preserve!</dd>
+
+    <dt>4. How many acres does the National Park Service protect?</dt>
+    <dd class="invisible">Over 84 million!</dd>
+
+    <dt>5. What National Park is the oldest?</dt>
+    <dd class="invisible">Yellowstone National Park!</dd>
+
+    <dt>6. Which two states have 8 National parks?</dt>
+    <dd class="invisible">California and Alaska!</dd>
+
+    <dt>7. Which National Park is home to the largest tree in the world?</dt>
+    <dd class="invisible">Sequoia National Park!</dd>
+
+    <dt>8. Which National Park has the longest known cave system in the world?</dt>
+    <dd class="invisible">Mammoth Cave National Park!</dd>
+
+    <dt>9. Where were the oldest human bones in North America found?</dt>
+    <dd class="invisible">Channel Islands National Park!</dd>
+
+    <dt>10. What is the most recent U.S. National Park?</dt>
+    <dd class="invisible">New River Gorge National Park!</dd>
+</dl>
+<div>
+    <label for="answers">Click here for actual answers -></label>
+    <input type="submit" id="answers">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    "use strict"
+    $(document).ready(function () {
+        // $('dd').addClass('invisible');
+
+        $('#fakeBtn').click(function (e) {
+            $('dt').toggleClass('invisible');
+            $('h1').toggleClass('invisible');
+        });
+
+        $('#answers').click(function (e) {
+            $('dd').toggleClass('invisible');
+        });
+
+
+        $('dt').click(function (e) {
+            $(this).css('background-color', 'yellow');
+        });
+        // one highlight at a time:
+        // $('dt').click(function (e) {
+        //     $('dt').each(function () {
+        //         $(this).css('background-color', 'transparent');
+        //     })
+        //     $(this).css('background-color', 'yellow');
+        // });
+    });
+</script>
+</body>
+</html>
