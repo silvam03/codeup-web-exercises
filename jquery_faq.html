@@ -123,15 +123,17 @@
 
 // Traversing Exercise
         $('#li-tags').click(function(e) {
-            $('ul').each(function(e) {
+            $('ul').each(function() {
                 $(this).children().last().css('background-color', 'yellow')
             });
         });
 
         $('h3').click(function(e) {
-            $(this).each(function() {
-                $('ul').children().css('font-weight', 'bold')
-            })
+                $(this).next().css('font-weight', 'bold');
+        });
+
+        $('li').click(function(e) {
+           $(this).parent().children().first().css('color', 'blue');
         });
 
 
