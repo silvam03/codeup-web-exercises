@@ -63,6 +63,36 @@
     <input type="submit" id="answers">
 </div>
 
+<!--Traversing Exercise-->
+<hr>
+<h3>Yosemite National Park</h3>
+<ul>
+    <li>Yosemite's granite rock formations glow like fire at sunset!</li>
+    <li>It's landscape supports more than 400 species!</li>
+    <li>One of the few places you can see a rainbow at night!</li>
+    <li>Famous for its giant sequoia trees!</li>
+</ul>
+
+<h3>Grand Canyon National Park</h3>
+<ul>
+    <li>The Grand Canyon is bigger than the state of Rhode Island!</li>
+    <li>The most dangerous animal in the park is the rock squirrel!</li>
+    <li>There are over 1000 caves in the Grand Canyon!</li>
+    <li>5.9 million people visit per year!</li>
+</ul>
+
+<h3>Denali National Park and Preserve</h3>
+<ul>
+    <li>One of the best places in the U.S. to watch the Aurora Borealis!</li>
+    <li>Only one species of amphibian (Wood Frog) has adapted to life in the cold at Denali!</li>
+    <li>The Glaciers cover over 1 million acres of Denali!</li>
+    <li>Some of the park rangers are dogs!</li>
+</ul>
+<div>
+    <label for="li-tags">Click here to highlight facts! -></label>
+    <input type="submit" id="li-tags">
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
@@ -90,6 +120,21 @@
         //     })
         //     $(this).css('background-color', 'yellow');
         // });
+
+// Traversing Exercise
+        $('#li-tags').click(function(e) {
+            $('ul').each(function(e) {
+                $(this).children().last().css('background-color', 'yellow')
+            });
+        });
+
+        $('h3').click(function(e) {
+            $(this).each(function() {
+                $('ul').children().css('font-weight', 'bold')
+            })
+        });
+
+
     });
 </script>
 </body>
