@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 80%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src="../js/keys.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = MAPBOX_TOKEN; // Add Mapbox token
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 12,
+        center: [-98.4916, 29.4252]
+    });
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-98.4916, 29.4252]) // Same as starting point in map
+        .addTo(map);
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat([-98.4916, 29.4252]) // Same as starting point in map
+        .setHTML("<p>Codeup Rocks!</p>")
+        .addTo(map);
+
+    var alamoPopup = new mapboxgl.Popup()
+        .setHTML("<p>Remember The Alamo!</p>")
+
+    marker.setPopup(alamoPopup);
+</script>
+</body>
+</html>
