@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapbox Maps API</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+
+    <style>
+        #map {
+            width: 100%;
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+
+<script src="../js/keys.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<script>
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 12,
+        center: [-96.80654628715952, 32.797045302147396]
+    });
+    // Markers
+    let marker1 = new mapboxgl.Marker()
+        .setLngLat([-96.80654628715952, 32.797045302147396])
+        .addTo(map);
+    let marker2 = new mapboxgl.Marker()
+        .setLngLat([-96.7993578594075, 32.78080882780036])
+        .addTo(map);
+    let marker3 = new mapboxgl.Marker()
+        .setLngLat([-96.79729003973883, 32.781279515679685])
+        .addTo(map);
+
+    // PopUps
+    let uchiPopup = new mapboxgl.Popup()
+        .setHTML("<p>Uchi</p>");
+        marker1.setPopup(uchiPopup);
+    let chopHouseBurger = new mapboxgl.Popup()
+        .setHTML("<p>Chop House Burger</p>");
+        marker2.setPopup(chopHouseBurger);
+    let portaDiRoma = new mapboxgl.Popup()
+        .setHTML("<p>Porta Di Roma</p>");
+        marker3.setPopup(portaDiRoma);
+
+</script>
+</body>
+</html>
