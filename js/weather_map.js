@@ -57,14 +57,23 @@ $.get("https://api.openweathermap.org/data/2.5/forecast", {
 });
 
 
+
+
+
 //Search City Button
 let userSearch = document.querySelector('#button');
 userSearch.addEventListener('click', uploadNewCity);
 
 function uploadNewCity(event) {
     let city = document.getElementById('search').value;
+    event.preventDefault();
 
-    // event.preventDefault();
+    geocode(city, MAPBOX_TOKEN).then(function(result) {
+        map.setCenter(result);
+        map.setZoom(12);
+        let marker1 = new mapboxgl.Marker()
+            .setLngLat(result)
+            .addTo(map);
 
     $.get("https://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
@@ -72,6 +81,7 @@ function uploadNewCity(event) {
         units: "imperial"
     }).done(function (data) {
         console.log(data);
+
         updateWeatherCards()
 
         function updateWeatherCards(e) {
@@ -112,7 +122,13 @@ function uploadNewCity(event) {
             $("#wind5").html("Wind: " + data.list[32].wind.speed);
         }
     });
+    })
 };
+
+
+
+
+
 
 //Map click for new weather updates
 map.on('click', function (e) {
@@ -120,6 +136,7 @@ map.on('click', function (e) {
     let marker = new mapboxgl.Marker({draggable: true})
         .setLngLat([coordinates.lng, coordinates.lat])
         .addTo(map);
+    map.flyTo({center: [coordinates.lng, coordinates.lat]});
     $.get("https://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat: coordinates.lat,

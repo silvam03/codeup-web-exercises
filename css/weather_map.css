@@ -4,8 +4,18 @@ body {
 #container {
     background-image: url("../img/weather.jpeg");
 }
+.header {
+    font-size: 75px;
+    text-decoration: underline;
+}
 .card {
     background-color: #0fb784;
+}
+#search {
+    background-color: lightgray;
+}
+#button {
+    background-color: #BFD45D;
 }
 .list-group-item {
     background-color: lightgray;
@@ -15,4 +25,7 @@ li, label, .card-header {
 }
 #map {
     border-radius: 25%;
+}
+.card-header {
+    background-color: #BFD45D;
 }
