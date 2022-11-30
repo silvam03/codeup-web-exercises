@@ -1,0 +1,18 @@
+body {
+    background-color: cornflowerblue;
+}
+#container {
+    background-image: url("../img/weather.jpeg");
+}
+.card {
+    background-color: #0fb784;
+}
+.list-group-item {
+    background-color: lightgray;
+}
+li, label, .card-header {
+    font-weight: bold;
+}
+#map {
+    border-radius: 25%;
+}
