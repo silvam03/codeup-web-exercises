@@ -41,7 +41,7 @@ let user3 = users.filter(function(n) {
 });
 console.log(user3);
 //or
-// let user3 = users.filter(n => n.languages.length >= 3);
+// let user3 = users.filter((n) => n.languages.length >= 3);
 // console.log(user3);
 
 // 3. Use .map to create an array of strings where each element is a user's email address
@@ -50,7 +50,7 @@ let userEmails = users.map(function(n) {
 });
 console.log(userEmails);
 //or
-// let userEmails = users.map(n => n.email);
+// let userEmails = users.map((n) => n.email);
 // console.log(userEmails);
 
 // 4. Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
@@ -58,6 +58,8 @@ const totalYears = users.reduce((total, user) =>{
     return total + user.yearsOfExperience;
 }, 0);
 console.log(totalYears);
+let averageYears = totalYears / users.length;
+console.log(averageYears);
 
 // 5. Use .reduce to get the longest email from the list of users.
 let longestEmail = userEmails.reduce((email1, email2) => {
@@ -66,11 +68,19 @@ let longestEmail = userEmails.reduce((email1, email2) => {
     } else {
         return email2;
     }
-});
+}, "");
 console.log(longestEmail);
 
 // 6. Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
-let instructors = users.reduce((total, user) => {
-    return `${total} ${user.name},`
+// let instructors = users.reduce((total, user) => {
+//     return `${total} ${user.name},`
+// }, "Your instructors are:");
+// console.log(instructors);
+
+let instructors = users.reduce(function(output, user, currentIndex) {
+    if(currentIndex === users.length -1) {
+       return `${output} ${user.name}.`
+    }
+    return `${output} ${user.name},`
 }, "Your instructors are:");
 console.log(instructors);
